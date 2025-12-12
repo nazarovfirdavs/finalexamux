@@ -46,19 +46,19 @@ export default function Home() {
     fetchOfferListings();
   }, []);
   return (
-    <div>
+    <div className='bg-slate-300'>
       {/* top */}
-      <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
-        <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl'>
-          The <span className='text-slate-500'>best</span>
-          <br />
+      <div className='flex flex-col gap-6 p-28 px-3 w-full mx-auto'>
+        <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl text-center'>
+          The <span className='text-slate-500'>best </span>
+          {/* <br /> */}
           or nothing
         </h1>
+        <img className='' src="https://stimg.cardekho.com/images/carexteriorimages/930x620/BMW/X7/10571/1689673096346/front-left-side-47.jpg" alt="" />
         <div className='text-gray-400 text-xs sm:text-sm'>
-          Sahand Estate is the best place to find your next perfect place to
-          live.
+        Firdavs Nazarov
           <br />
-          We have a wide range of properties for you to choose from.
+          +99897-543-83-05
         </div>
         <Link
           to={'/search'}
@@ -70,25 +70,24 @@ export default function Home() {
 
       {/* swiper */}
       <Swiper navigation>
-        {offerListings &&
-          offerListings.length > 0 &&
-          offerListings.map((listing) => (
+        {saleListings &&
+          saleListings.length > 0 &&
+          saleListings.map((listing) => (
             <SwiperSlide>
               <div
                 style={{
                   background: `url(${listing.imageUrls[0]}) center no-repeat`,
                   backgroundSize: 'cover',
                 }}
-                className='h-[500px]'
+                className='h-[700px]'
                 key={listing._id}
               ></div>
             </SwiperSlide>
           ))}
       </Swiper>
 
-      {/* listing results for offer, sale and rent */}
 
-      <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10'>
+      <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10 bg-slate-300'>
         {offerListings && offerListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
@@ -103,10 +102,10 @@ export default function Home() {
           </div>
         )}
         {rentListings && rentListings.length > 0 && (
-          <div className=''>
+          <div className=' -mt-6'>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for rent</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>Show more places for rent</Link>
+              <h2 className='text-2xl font-semibold text-slate-600'>Recent cars for rent</h2>
+              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>Show more cars for rent</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
               {rentListings.map((listing) => (
@@ -118,8 +117,8 @@ export default function Home() {
         {saleListings && saleListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for sale</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale'}>Show more places for sale</Link>
+              <h2 className='text-2xl font-semibold text-slate-600'>Recent cars for sale</h2>
+              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale'}>Show more cars for sale</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
               {saleListings.map((listing) => (
@@ -129,6 +128,7 @@ export default function Home() {
           </div>
         )}
       </div>
+ <p>firdavs'market</p>
     </div>
   );
-}
+} 

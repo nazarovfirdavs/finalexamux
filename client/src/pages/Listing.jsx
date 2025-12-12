@@ -57,7 +57,7 @@ export default function Listing() {
   }, [params.listingId]);
 
   return (
-    <main>
+    <main className="bg-slate-300">
       {loading && <p className="text-center my-7 text-2xl">Loading...</p>}
       {error && (
         <p className="text-center my-7 text-2xl">Something went wrong!</p>
@@ -90,7 +90,7 @@ export default function Listing() {
             />
           </div>
           {copied && (
-            <p className="fixed top-[23%] right-[5%] z-10 rounded-md bg-slate-100 p-2">
+            <p className="fixed top-[23%] right-[5%] z-10 rounded-md bg-green-500 p-2 text-white">
               Link copied!
             </p>
           )}
@@ -115,7 +115,7 @@ export default function Listing() {
               {listing.address}
             </p>
             <div className="flex gap-4">
-              <p className="bg-red-900 w-full max-w-[200px] text-white text-center p-1 rounded-md">
+              <p className="bg-yellow-300 w-full max-w-[200px] text-black text-center p-1 rounded-md">
                 {listing.type === "rent" ? "For Rent" : "For Sale"}
               </p>
               {listing.offer && (
@@ -155,13 +155,14 @@ export default function Listing() {
                 onClick={() => setContact(true)}
                 className="bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 p-3"
               >
-                Contact landlord
+                Contact to owner
               </button>
             )}
             {contact && <Contact listing={listing} />}
           </div>
         </div>
       )}
+      <p>Firdavs'market</p>
     </main>
   );
 }

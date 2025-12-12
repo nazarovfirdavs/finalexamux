@@ -40,7 +40,7 @@ export default function Search() {
       setSidebardata({
         searchTerm: searchTermFromUrl || "",
         type: typeFromUrl || "all",
-        parking: parkingFromUrl === "true" ? true : false,
+        fuel: parkingFromUrl === "true" ? true : false,
         electro: furnishedFromUrl === "true" ? true : false,
         offer: offerFromUrl === "true" ? true : false,
         sort: sortFromUrl || "created_at",
@@ -74,7 +74,7 @@ export default function Search() {
     ) {
       setSidebardata({ ...sidebardata, type: e.target.id });
     }
-
+    // classValidator
     if (e.target.id === "searchTerm") {
       setSidebardata({ ...sidebardata, searchTerm: e.target.value });
     }
@@ -128,7 +128,7 @@ export default function Search() {
     setListings([...listings, ...data]);
   };
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="flex flex-col md:flex-row bg-slate-300">
       <div className="p-7  border-b-2 md:border-r-2 md:min-h-screen">
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">
           <div className="flex items-center gap-2">

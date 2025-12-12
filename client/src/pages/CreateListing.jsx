@@ -22,11 +22,11 @@ export default function CreateListing() {
     address: "",
     type: "rent",
     owner: 1,
-    year: 1,
+    year: 1900,
     regularPrice: 50,
     discountPrice: 0,
     offer: false,
-    fuel: false,
+    fuel: true,
     electro: false,
   });
   const [imageUploadError, setImageUploadError] = useState(false);
@@ -156,6 +156,7 @@ export default function CreateListing() {
     }
   };
   return (
+    <div className="bg-slate-300">
     <main className="p-3 max-w-4xl mx-auto">
       <h1 className="text-3xl font-semibold text-center my-7">
         Create a Listing
@@ -391,5 +392,6 @@ export default function CreateListing() {
         </div>
       </form>
     </main>
+</div>
   );
 }
